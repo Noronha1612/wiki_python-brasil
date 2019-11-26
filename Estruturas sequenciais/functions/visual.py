@@ -7,3 +7,9 @@ def arredondamento(num):
     elif res % 0.1 == 0:
         res = round(res, 1)
     return res
+
+
+def formatDinheiro(num):
+    res = f'R${num:.2f}'
+    res = res.replace('.',',')
+    return res
