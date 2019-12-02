@@ -1,7 +1,7 @@
 from functions.validação import lerFloat
 print("""\33[1;33mSelecione uma opção: 
 [1] Metros -> Centímetros
-[2] Centímetros -> Metros\33[m""") #Opções
+[2] Centímetros -> Metros\33[m""") #Opções 
 while True:
     esc = input('\33[1;34mSua opção: \33[m') #Escolha com tratamento de erro
     if esc == '1' or esc == '2':
