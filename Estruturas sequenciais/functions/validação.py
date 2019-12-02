@@ -27,4 +27,12 @@ def lerNota(msg):
         if 0 <= nota <= 10:
             return nota
         print('Digite uma nota válida')
-    
+
+
+def lerOnlyFloat(msg, erro='Digite um valor flutuante'):
+    while True:
+        num = lerFloat(msg)
+        if str(num).find('.') != -1:
+            break
+        print(erro)
+    return num
