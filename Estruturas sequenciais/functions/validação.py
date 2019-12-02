@@ -15,13 +15,14 @@ def lerFloat(msg): #Lê um valor "float" com tratamento de erro
 def lerInt(msg): #Lê um valor inteiro com tratamento de erro
     while True:
         try:
-            num = int(input('Digite um número inteiro: '))
+            num = int(input(msg))
         except:
             print('Digite um valor inteiro válido.')
         else:
             return num
 
-def lerNota(msg):
+
+def lerNota(msg): #Lê uma nota de 0 a 10
     while True:
         nota = lerFloat(msg)
         if 0 <= nota <= 10:
@@ -36,3 +37,14 @@ def lerOnlyFloat(msg, erro='Digite um valor flutuante'):
             break
         print(erro)
     return num
+
+
+def lerSexo(msg):
+    while True:
+        sexo = input(msg).strip().lower()[0]
+        if sexo in 'mf':
+            if sexo == 'm':
+                return 'masculino'
+            else:
+                return 'feminino'
+        print('Digite M para masculino ou F para feminino.')
