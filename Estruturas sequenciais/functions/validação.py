@@ -1,4 +1,4 @@
-def lerFloat(msg): #Lê um valor "float" com tratamento de erro
+def lerFloat(msg, erro='Digite um valor válido.', pos=False): #Lê um valor "float" com tratamento de erro
     while True:
         num = input(msg)
         num = num.replace(',', '.')
@@ -8,26 +8,34 @@ def lerFloat(msg): #Lê um valor "float" com tratamento de erro
             num = float(num)
             if num % 1 == 0:
                 num = int(num)
-            return num
-        print('Digite um valor válido.')
+            if pos:
+                if num >= 0:
+                    return num 
+            else:
+                return num
+        print(erro)
     
 
-def lerInt(msg): #Lê um valor inteiro com tratamento de erro
+def lerInt(msg, erro='Digite um valor inteiro válido.', pos=False): #Lê um valor inteiro com tratamento de erro
     while True:
         try:
             num = int(input(msg))
         except:
-            print('Digite um valor inteiro válido.')
+            print(erro)
         else:
-            return num
+            if pos:
+                if num >= 0:
+                    return num
+            else: 
+                return num
 
 
-def lerNota(msg): #Lê uma nota de 0 a 10
+def lerNota(msg, erro='Digite uma nota válida'): #Lê uma nota de 0 a 10
     while True:
         nota = lerFloat(msg)
         if 0 <= nota <= 10:
             return nota
-        print('Digite uma nota válida')
+        print(erro)
 
 
 def lerOnlyFloat(msg, erro='Digite um valor flutuante'):
@@ -39,7 +47,7 @@ def lerOnlyFloat(msg, erro='Digite um valor flutuante'):
     return num
 
 
-def lerSexo(msg):
+def lerSexo(msg, erro='Digite M para masculino ou F para feminino.'):
     while True:
         sexo = input(msg).strip().lower()[0]
         if sexo in 'mf':
@@ -47,4 +55,4 @@ def lerSexo(msg):
                 return 'masculino'
             else:
                 return 'feminino'
-        print('Digite M para masculino ou F para feminino.')
+        print(erro)
