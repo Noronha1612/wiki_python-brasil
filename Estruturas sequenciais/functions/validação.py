@@ -26,6 +26,7 @@ def lerInt(msg, erro='Digite um valor inteiro válido.', pos=False): #Lê um val
             if pos:
                 if num >= 0:
                     return num
+                print(erro)
             else: 
                 return num
 
