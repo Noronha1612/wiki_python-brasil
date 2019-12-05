@@ -31,7 +31,7 @@ def lerInt(msg, erro='Digite um valor inteiro válido.', pos=False): #Lê um val
                 return num
 
 
-def lerNota(msg, erro='Digite uma nota válida'): #Lê uma nota de 0 a 10
+def lerNota(msg, erro='Digite uma nota de 0 a 10 válida'): #Lê uma nota de 0 a 10
     while True:
         nota = lerFloat(msg)
         if 0 <= nota <= 10:
@@ -57,3 +57,8 @@ def lerSexo(msg, erro='Digite M para masculino ou F para feminino.'):
             else:
                 return 'feminino'
         print(erro)
+
+
+def media(* num):
+    from visual import arredondamento
+    return arredondamento(sum(num) / len(num))
