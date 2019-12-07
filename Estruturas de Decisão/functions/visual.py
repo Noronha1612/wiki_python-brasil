@@ -17,3 +17,14 @@ def formatDinheiro(num):
     res = f'R${num:.2f}'
     res = res.replace('.',',')
     return res
+
+
+def tabela(dicio, alinhar=False):
+    print('-='*20)
+    if alinhar:
+        for k, v in dicio.items():
+            print(f'{k:.<30}{v}')
+    else:
+        for k, v in dicio.items():
+            print(f'{k}: {v}')
+    print('-='*20)
