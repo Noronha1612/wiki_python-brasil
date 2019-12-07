@@ -62,3 +62,11 @@ def lerSexo(msg, erro='Digite M para masculino ou F para feminino.'):
 def media(* num):
     from visual import arredondamento
     return arredondamento(sum(num) / len(num))
+
+
+def lerHoraPorDia(msg, erro='Digite uma hora válida.'):
+    while True:
+        hora = lerInt(msg, pos=True, erro=erro)
+        if hora <= 24:
+            return hora
+        print(erro)
