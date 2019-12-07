@@ -19,12 +19,12 @@ def formatDinheiro(num):
     return res
 
 
-def tabela(dicio, alinhar=False):
-    print('-='*20)
+def tabela(dicio, alinhar=False, tam=20):
+    print('-='*tam)
     if alinhar:
         for k, v in dicio.items():
             print(f'{k:.<30}{v}')
     else:
         for k, v in dicio.items():
             print(f'{k}: {v}')
-    print('-='*20)
+    print('-='*tam)
