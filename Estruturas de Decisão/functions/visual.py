@@ -28,3 +28,9 @@ def tabela(dicio, alinhar=False, tam=20):
         for k, v in dicio.items():
             print(f'{k}: {v}')
     print('-='*tam)
+
+
+def titulo(msg):
+    print('~'* (len(msg) + 4))
+    print('  ' + msg)
+    print('~'* (len(msg) + 4))
