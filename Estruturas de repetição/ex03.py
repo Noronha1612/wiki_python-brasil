@@ -1,25 +1,60 @@
-from functions.validação import lerInt
-from functions.visual import tabela
+from functions.validação import lerInt, lerFloat
+from functions.visual import tabela, formatDinheiro
+from time import sleep
 
-
-def capitalizarNome(nome):
-    pos = 0
-    letrasnome = []
-    for l in nome:
-        letrasnome.append(l)
-    while True:
-        if nome[pos:].find(' ') == -1:
-            return ''.join(letrasnome)
-        else:
-            letrasnome[nome[pos:].find(' ') + 1] = letrasnome[nome[pos:].find(' ') + 1].upper()
-        pos = nome[pos:].find(' ') + 1
-        
-
-
+dados = {}
 
 while True:
-    nome = capitalizarNome(input('Nome: ').strip().lower().capitalize())
+    nome = input('Nome: ').strip().lower()
     if len(nome) > 3:
+        dados['Nome'] = nome.capitalize()
         break
     print('O nome deve ter mais que 3 caracteres')
-print(nome)
+
+while True:
+    idade = lerInt('Idade: ')
+    if 0 <= idade <= 150:
+        dados['Idade'] = idade
+        break
+    print('Digite uma idade válida.')
+
+while True:
+    salario = lerFloat('Salário: R$', erro='Digite um valor')
+    if salario > 0:
+        dados['Salário'] = formatDinheiro(salario)
+        break
+    print('Digite uma quantia válida.')
+
+sexos = {
+    'f':'Feminino',
+    'm':'Masculino'
+    }
+while True:
+    sexo = input('Sexo: [F/M] ').strip().lower()[0]
+    if sexo in sexos.keys():
+        dados['Sexo'] = sexos[sexo]
+        break
+    print('Digite um sexo válido')
+
+estados = {
+    's':'Solteiro(a)',
+    'c':'Casado(a)',
+    'd':'Divorciado(a)',
+    'v':'Viúvo(a)'
+    }
+print("""Selecione seu estado civil:
+[S] Solteiro(a)
+[C] Casado(a)
+[D] Divorciado(a)
+[V] Viúvo(a)""")
+
+while True:
+    ec = input('Sua opção: ').strip().lower()[0]
+    if ec in estados.keys():
+        dados['Estado Civil'] = estados[ec]
+        break
+    print('Digite uma opção válida')
+
+print('Guardando dados...')
+sleep(1.5)
+tabela(dados)
