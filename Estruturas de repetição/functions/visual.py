@@ -1,6 +1,6 @@
 def arredondamento(num):
     res = num
-    if len(str(res)[str(res).find('.'):]) >= 5:
+    if len(str(res)[str(res).find('.'):]) >= 4:
         res = round(res, 2)
         return res
     if res % 1 == 0:
