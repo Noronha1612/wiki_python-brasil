@@ -59,9 +59,8 @@ def lerSexo(msg, erro='Digite M para masculino ou F para feminino.'):
         print(erro)
 
 
-def media(* num):
-    from visual import arredondamento
-    return arredondamento(sum(num) / len(num))
+def media(nums): #Para listas
+    return sum(nums) / len(nums)
 
 
 def lerHoraPorDia(msg, erro='Digite uma hora válida.'):
