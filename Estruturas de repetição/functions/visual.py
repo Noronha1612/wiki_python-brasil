@@ -1,4 +1,6 @@
-def arredondamento(num):
+def arredondamento(num, inteiro=False):
+    if inteiro:
+        return int(round(num, 0))
     res = num
     if len(str(res)[str(res).find('.'):]) >= 4:
         res = round(res, 2)
