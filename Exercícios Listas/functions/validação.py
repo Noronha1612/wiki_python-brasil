@@ -63,6 +63,16 @@ def media(nums): #Para listas
     return sum(nums) / len(nums)
 
 
+def lerSimNao(msg, erro='Digite apenas "S" para "SIM" ou "N" Para Não'):
+    while True:
+        opcao = input(msg).strip().lower()[0]
+        if opcao == 's':
+            return True
+        elif opcao == 'n':
+            return False
+        print(erro)
+
+
 def lerHoraPorDia(msg, erro='Digite uma hora válida.'):
     while True:
         hora = lerInt(msg, pos=True, erro=erro)
