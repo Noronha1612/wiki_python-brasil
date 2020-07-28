@@ -21,8 +21,9 @@ def formatDinheiro(num):
     return res
 
 
-def tabela(dicio, alinhar=False, tam=36):
-    print('TABELA'.center(tam, "="))
+def tabela(dicio, alinhar=False, tam=36, title=True):
+    if title:
+        print('TABELA'.center(tam, "="))
     if alinhar:
         for k, v in dicio.items():
             print(f'{k:.<30}{v}')

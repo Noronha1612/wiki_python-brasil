@@ -43,10 +43,10 @@ notas.reverse()
 notasSenInv = notas[:]
 notas.reverse()
 
-print(f'Notas no sentido inverso em que foram informadas:')
+print(f'Notas no sentido inverso em que foram informadas:', end="")
 for nota in notasSenInv:
-    print(nota)
-print()
+    print(nota, end="; ")
+print('\n')
 
 print(f'Soma das notas: {arredondamento(sum(notas))}\n')
 
